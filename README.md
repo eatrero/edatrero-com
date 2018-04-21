@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/eatrero/edatrero-com.svg?style=svg)](https://circleci.com/gh/eatrero/edatrero-com)
+
 # edatrero.com
 Personal site of Ed Atrero
 
