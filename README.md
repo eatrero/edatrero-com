@@ -1,9 +1,29 @@
-# React-Static - Styled-Components Example
+# edatrero.com
+Personal site of Ed Atrero
 
-This example includes:
-- Styled-Components
-- Image imports
-- File imports
-- Automatic Routing
+Written using:
+- [React Static](https://github.com/nozzle/react-static)
+- [Styled-Components](https://www.styled-components.com/)
 
-To get started, run `react-static create` and use the `styled-components` template.
+
+## Quick Start
+1) To run locally, install dependencies
+```bash
+$ npm i # or react-static start
+```
+  and then start the dev server
+```bash
+$ yarn start # or react-static start
+```
+
+2) To test a production build
+```bash
+$ yarn stage # or react-static build --staging
+$ yarn serve
+```
+
+3) Build for production
+```bash
+$ yarn build # or react-static build
+```
+
