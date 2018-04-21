@@ -3,6 +3,8 @@ import { Router, Link } from 'react-static';
 import styled, { injectGlobal } from 'styled-components';
 import { hot } from 'react-hot-loader';
 import Routes from 'react-static-routes';
+import Footer from './components/footer';
+import Hamburger from './components/icons/hamburger';
 
 const globalStyles = injectGlobal`
   body {
@@ -41,19 +43,47 @@ const AppStyles = styled.div`
   }
 `;
 
-const App = () => (
-  <Router>
-    <AppStyles>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-      </nav>
-      <div className="content">
-        <Routes />
-      </div>
-    </AppStyles>
-  </Router>
-);
+const Nav = styled.nav`
+  display: flex;
+  justify-content: flex-begin;
+`;
+
+const HamburgerWrapper = styled.div`
+  padding: 1rem 0.5rem 1rem 1rem;
+`;
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      toggle: false,
+    };
+  }
+
+  onMenuToggle = () => {
+    this.setState({ toggle: !this.state.toggle });
+  };
+
+  render() {
+    return (
+      <Router>
+        <AppStyles>
+          <Nav>
+            <HamburgerWrapper onClick={this.onMenuToggle}>
+              <Hamburger fill="#fff" open={this.state.toggle} />
+            </HamburgerWrapper>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/blog">Blog</Link>
+          </Nav>
+          <div className="content">
+            <Routes />
+          </div>
+          <Footer />
+        </AppStyles>
+      </Router>
+    );
+  }
+}
 
 export default hot(module)(App);
