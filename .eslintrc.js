@@ -2,6 +2,9 @@ module.exports = {
   parser: 'babel-eslint',
   extends: [ 'airbnb', 'prettier/react'],
   rules: {
+    'import/extensions': 0,
+    'import/no-unresolved':0,
+    'import/no-extraneous-dependencies': 0,
     'jsx-a11y/anchor-has-content': 1,
     'jsx-a11y/heading-has-content': 1,
     'jsx-a11y/no-static-element-interactions': 0,

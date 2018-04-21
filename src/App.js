@@ -6,8 +6,7 @@ import Routes from 'react-static-routes';
 
 const globalStyles = injectGlobal`
   body {
-    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
-      'Lucida Grande', sans-serif;
+    font-family: Lato, "Segoe UI", Avenir, Ubuntu, Tahoma, Verdana, Helvetica, sans-serif;
     font-weight: 300;
     font-size: 16px;
     margin: 0;
