@@ -6,11 +6,13 @@ import LinkedIn from '../components/icons/linkedin';
 import Github from '../components/icons/github';
 
 const Heading = styled.h1`
+  text-align: center;
   color: #444;
   font-size: 24px;
 `;
 
 const Subheading = styled.h2`
+  text-align: center;
   color: #444;
   font-size: 18px;
 `;
@@ -25,39 +27,38 @@ const LinkWrapper = styled.div`
 `;
 
 type SocialLink = {
-  altText: string,
+  title: string,
   link: string,
   icon: any,
 };
 
 const socialLinks = [
   {
-    altText: 'LinkedIn',
+    title: 'Linked In',
     link: 'https://www.linkedin.com/in/edatrero/',
     icon: LinkedIn,
   },
   {
-    altText: 'Github',
+    title: 'Github',
     link: 'https://github.com/eatrero',
     icon: Github,
   },
 ];
 
-export default withSiteData(() => (
+export const Home = () => (
   <div>
-    <Heading style={{ textAlign: 'center' }}>Ed Atrero</Heading>
-    <Subheading style={{ textAlign: 'center' }}>Software Developer</Subheading>
+    <Heading>Ed Atrero</Heading>
+    <Subheading>Software Developer</Subheading>
     <LinksWrapper>
-      {socialLinks.map((socialLink: SocialLink) => {
-        const Icon = socialLink.icon;
-        return (
-          <LinkWrapper>
-            <a href={socialLink.link} target="_blank">
-              <Icon fill="#a0a0a0" />
-            </a>
-          </LinkWrapper>
-        );
-      })}
+      {socialLinks.map(({ icon: Icon, link, title }: SocialLink) => (
+        <LinkWrapper key={title}>
+          <a href={link} target="_blank" title={title}>
+            <Icon className="social-icon" fill="#a0a0a0" />
+          </a>
+        </LinkWrapper>
+      ))}
     </LinksWrapper>
   </div>
-));
+);
+
+export default withSiteData(Home);
