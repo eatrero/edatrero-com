@@ -2,6 +2,7 @@
 import React from 'react';
 import { withSiteData } from 'react-static';
 import styled from 'styled-components';
+import Hamburger from '../components/icons/hamburger';
 import LinkedIn from '../components/icons/linkedin';
 import Github from '../components/icons/github';
 
