@@ -34,7 +34,7 @@ type SocialLink = {
 
 const socialLinks = [
   {
-    title: 'LinkedIn',
+    title: 'Linked In',
     link: 'https://www.linkedin.com/in/edatrero/',
     icon: LinkedIn,
   },
